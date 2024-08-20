@@ -7,7 +7,9 @@
   --button-color: #fff;
   --button-text-color: #212e37;
 }
-/* #2b3743 */
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
@@ -16,7 +18,7 @@ body {
   color: var(--text-color);
 }
 main {
-  padding: 1rem 5rem;
+  padding: 1rem 68px;
 }
 header {
   background-color: var(--card-background);
@@ -45,35 +47,41 @@ button {
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 #search {
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: 40%;
   font-size: 1rem;
   background-color: var(--input-background);
 }
 
 #search::placeholder {
-  color: #a7a7a7;
+  color: var(--text-color);
 }
 #region {
   padding: 0.6rem;
+  width: 15%;
   background-color: var(--element-background);
   color: var(--text-color);
 }
 .countries-container {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-  justify-content: space-evenly;
-  gap: 4rem;
+  justify-content: center; */
+  gap: 68px;
 }
 .country-container {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 275px;
+  min-width: 275px;
   display: inline-block;
   background-color: var(--card-background);
   padding-bottom: 1.5rem;
@@ -85,4 +93,25 @@ button {
 .card-info {
   font-size: smaller;
   padding-left: 15px;
+}
+
+/* MOBILE media-query */
+@media (max-width: 425px) {
+  #search-container {
+    flex-direction: column;
+    align-items: start;
+    padding: 0;
+    width: 100%;
+  }
+  main {
+    padding: 1.25rem;
+  }
+  #search {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  #region {
+    margin-bottom: 1rem;
+    width: 40%;
+  }
 }
