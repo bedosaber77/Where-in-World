@@ -76,6 +76,7 @@ button {
   width: 100%;
   display: inline-block;
   background-color: var(--card-background);
+  padding-bottom: 1.5rem;
 }
 .country-container img {
   width: 100%;
@@ -83,5 +84,5 @@ button {
 }
 .card-info {
   font-size: smaller;
-  padding-left: 8px;
+  padding-left: 15px;
 }
