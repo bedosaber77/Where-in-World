@@ -1,7 +1,17 @@
+:root {
+  --background: #fff;
+  --text-color: #000;
+  --element-background: #fff;
+  --input-background: #fff;
+  --button-color: #fff;
+  --button-text-color: #212e37;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: "Nunito Sans", sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
 }
 header {
   display: flex;
@@ -15,11 +25,14 @@ header {
 h1 {
   display: inline-block;
   font-size: 18px;
+  color: var(--text-color);
 }
 button {
   border: 0;
-  background-color: none;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
   font-family: "Nunito Sans", sans-serif;
+  cursor: pointer;
 }
 #search-container {
   display: flex;
@@ -33,16 +46,20 @@ button {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
+  background-color: var(--input-background);
 }
+
 #search::placeholder {
   color: #a7a7a7;
 }
 #region {
   padding: 0.6rem;
+  background-color: var(--element-background);
+  color: var(--text-color);
 }
 .countries-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
@@ -50,7 +67,7 @@ button {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 220px;
+  width: 200px;
   display: inline-block;
 }
 .country-container img {
