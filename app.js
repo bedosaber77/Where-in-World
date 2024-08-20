@@ -62,6 +62,7 @@ mode.addEventListener("click", () => {
         r.style.setProperty('--input-background', '#fff');
         r.style.setProperty('--button-color', '#fff');
         r.style.setProperty('--button-text-color', '#212e37');        
+        r.style.setProperty('--card-background', '#fff');        
     }
     else {
         r.style.setProperty('--background', '#212e37');
@@ -70,5 +71,6 @@ mode.addEventListener("click", () => {
         r.style.setProperty('--input-background', '#212e37');
         r.style.setProperty('--button-color', '#212e37');
         r.style.setProperty('--button-text-color', '#fff');
+        r.style.setProperty('--card-background', '#2b3743');        
     }
 })

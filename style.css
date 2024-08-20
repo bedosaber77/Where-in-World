@@ -1,11 +1,13 @@
 :root {
-  --background: #fff;
+  --background: #fafafa;
+  --card-background: #fff;
   --text-color: #000;
   --element-background: #fff;
   --input-background: #fff;
   --button-color: #fff;
   --button-text-color: #212e37;
 }
+/* #2b3743 */
 body {
   margin: 0;
   padding: 0;
@@ -13,7 +15,11 @@ body {
   background-color: var(--background);
   color: var(--text-color);
 }
+main {
+  padding: 1rem 5rem;
+}
 header {
+  background-color: var(--card-background);
   display: flex;
   position: relative;
   top: 0;
@@ -59,16 +65,17 @@ button {
 }
 .countries-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  justify-content: space-evenly;
+  gap: 4rem;
 }
 .country-container {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 200px;
+  width: 100%;
   display: inline-block;
+  background-color: var(--card-background);
 }
 .country-container img {
   width: 100%;
