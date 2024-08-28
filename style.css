@@ -35,12 +35,13 @@ h1 {
   font-size: 18px;
   color: var(--text-color);
 }
-button {
+header button {
   border: 0;
-  background-color: var(--button-color);
-  color: var(--button-text-color);
+  background-color: var(--button-text-color);
+  color: var(--button-color);
   font-family: "Nunito Sans", sans-serif;
   cursor: pointer;
+  border-radius: 50%;
 }
 #search-container {
   display: flex;
@@ -80,7 +81,7 @@ button {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 275px;
+  width: 275px; /* dec 9px to fit google chrome (test only) */
   min-width: 275px;
   display: inline-block;
   background-color: var(--card-background);
@@ -95,8 +96,69 @@ button {
   padding-left: 15px;
 }
 
+.selected-country-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 600px;
+    margin-right: 1rem;
+  }
+  >div {
+    height: 500px;
+    border: #000 1px solid;    
+  }
+}
+.selected-country-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    margin-bottom: 1rem;
+  }
+  .selected-country-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    >div {
+      height: 300px;
+      border: #f00 1px solid;
+    }
+  }
+  .border-countries {
+    display: flex;
+    align-items: center;
+    p {
+      min-width: 140px;
+    }
+    .border-countries-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      button {
+        height: 30px;
+        padding: 0 0.5rem;
+        border-radius: 5px;
+        background-color: rgb(182, 182, 182);
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+  
+}
+main button {
+  border: 0;
+  color: #fff;
+  background-color: rgb(182, 182, 182);
+  font-family: "Nunito Sans", sans-serif;
+  cursor: pointer;
+  padding: 5px;
+}
+
 /* MOBILE media-query */
-@media (max-width: 425px) {
+@media (max-width: 376px) {
   #search-container {
     flex-direction: column;
     align-items: start;

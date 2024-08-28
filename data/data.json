@@ -528,6 +528,10 @@
       "svg": "https://flagcdn.com/aq.svg",
       "png": "https://flagcdn.com/w320/aq.png"
     },
+    "currencies": [
+      {
+      }
+    ],
     "languages": [
       {
         "iso639_1": "en",
