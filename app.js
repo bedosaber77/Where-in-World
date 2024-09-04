@@ -11,6 +11,10 @@ var region;
 
 window.onload = setup();
 
+homeButton.addEventListener("click", () => {
+  setup();
+});
+
 function render() {
   countriesContainer.innerHTML = "";
   data.forEach((country) => {
@@ -29,10 +33,6 @@ function setup() {
   data = allData;
 
   render();
-
-  homeButton.addEventListener("click", () => {
-    setup();
-  });
 
   region.addEventListener("change", async (event) => {
     data = await updateData(event.target.value, name.value);
@@ -118,38 +118,49 @@ function renderSelectedCountry(selectedCountry) {
   const selectedCountryContainer = document.createElement("div");
   selectedCountryContainer.classList.add("selected-country-container");
   selectedCountryContainer.innerHTML = `
-    <div>
-      <button id="back-button" style="display: block">Back</button>
-      <img src="${selectedCountry.flag}" alt="${selectedCountry.name}">
-    </div>
-    
-    <div class="selected-country-info">
-      <h2>${selectedCountry.name}</h2>
-      <div class="selected-country-details">
-        <div class="left">
-          <p><strong>Native Name:</strong> ${selectedCountry.nativeName}</p>
-          <p><strong>Population:</strong> ${selectedCountry.population}</p>
-          <p><strong>Region:</strong> ${selectedCountry.region}</p>
-          <p><strong>Sub Region:</strong> ${selectedCountry.subregion}</p>
-          <p><strong>Capital:</strong> ${selectedCountry.capital}</p>
+      <div class="back-button">
+        <button id="back-button" style="display: block">Back</button>
+      </div>
+      
+      <div class="selected-country">
+        <div class="flag">
+          <img src="${selectedCountry.flag}" alt="${selectedCountry.name}">
         </div>
-        <div class="right">
-          <p><strong>Top Level Domain:</strong> ${selectedCountry.topLevelDomain}</p>
-          <p><strong>Currencies:</strong> ${selectedCountry.currency}</p>
-          <p><strong>Languages:</strong> ${addLanguages(
-            selectedCountry.languages
-          )}</p>
+
+        <div class="info">
+          <div class="name">
+            <p>${selectedCountry.name}</p>
+          </div>
+          
+          <div class="details">
+
+            <div class="left">
+              <p><strong>Native Name:</strong> ${selectedCountry.nativeName}</p>
+              <p><strong>Population:</strong> ${selectedCountry.population}</p>
+              <p><strong>Region:</strong> ${selectedCountry.region}</p>
+              <p><strong>Sub Region:</strong> ${selectedCountry.subregion}</p>
+              <p><strong>Capital:</strong> ${selectedCountry.capital}</p>
+            </div>
+
+            <div class="right">
+              <p><strong>Top Level Domain:</strong> ${selectedCountry.topLevelDomain}</p>
+              <p><strong>Currencies:</strong> ${selectedCountry.currency}</p>
+              <p><strong>Languages:</strong> ${addLanguages(selectedCountry.languages)}</p>
+            </div>
+
+          </div>
+
+          <div class="borders">
+            <div>
+              <p><strong>Border Countries:</strong></p>
+            </div>
+            <div class="border-countries-list">
+              ${addBorders(selectedCountry)}
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="border-countries">
-        <div>
-          <p><strong>Border Countries:</strong></p>
-        </div>
-        <div class="border-countries-list">
-        ${addBorders(selectedCountry)}
-        </div>
-      </div>
-    </div>
     `;
   main.innerHTML = "";
   main.appendChild(selectedCountryContainer);
