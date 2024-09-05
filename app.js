@@ -143,9 +143,13 @@ function renderSelectedCountry(selectedCountry) {
             </div>
 
             <div class="right">
-              <p><strong>Top Level Domain:</strong> ${selectedCountry.topLevelDomain}</p>
+              <p><strong>Top Level Domain:</strong> ${
+                selectedCountry.topLevelDomain
+              }</p>
               <p><strong>Currencies:</strong> ${selectedCountry.currency}</p>
-              <p><strong>Languages:</strong> ${addLanguages(selectedCountry.languages)}</p>
+              <p><strong>Languages:</strong> ${addLanguages(
+                selectedCountry.languages
+              )}</p>
             </div>
 
           </div>
