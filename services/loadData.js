@@ -1,4 +1,5 @@
 export async function LoadData() {
-  const response = await fetch("./data/data.json");
+  const baseUrl = window.location.origin + window.location.pathname;
+  const response = await fetch(`${baseUrl}/data/data.json`);
   return await response.json();
 }
